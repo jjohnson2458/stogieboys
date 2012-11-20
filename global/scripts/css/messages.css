@@ -1,0 +1,84 @@
+.message {
+        padding-left: 25px;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:12px;
+        border:#000000 solid 1px;
+		height:18px;
+        font-weight:bold;
+        display:block;
+        clear:both;
+}
+
+.success {
+    background: url('/global/images/icons/accept.png') no-repeat 5px 1px;
+        color:#000000;
+        background-color:#66FF66;
+}
+
+
+.caution {
+    background: url('/global/images/icons/error.png') no-repeat 5px 1px;
+        color:#000000;
+        background-color:#ffff00;
+}
+
+.error {
+    background: url('/global/images/icons/exclamation.png') no-repeat 5px 1px;
+        color:#ffffff;
+        background-color:#ff0000;
+}
+
+.info {
+    background: url('/global/images/icons/information.png') no-repeat 5px 1px;
+        color:#ffffff;
+        background-color:#0099ff;
+}
+.message_close{
+        font-weight:bold;
+        font-size:1.2em;
+        margin-right: 5px;
+        display: inline;
+        float:right;
+        cursor: pointer;
+}
+
+
+/**
+remember to add the class "message" to the div
+
+<div style="display:block; clear:both; height:35px; background-color: black;">this is the header</div>
+<div id="message" class="success message">this is a test message
+<div class="message_close">X</div>
+</div>
+
+
+
+
+javascript:
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+jQuery("div.message_close").live("click",
+        function(){
+                jQuery(this).parent("div").css("display","none");
+        });
+
+});
+
+</script>
+
+
+
+key css for divs:
+
+float: right/left  (if you put several float left divs after each other they will stack to the right until there isn't room then wrap...inverse for float right)
+make sure to clear your floats
+clear:left/right/both (clear left start with a line break then output the div...right end with line break...)
+display: inline/block and a ton more (display inline is usefull for making horizontal nav using a ul's or to make a div appear on the same line.  display block will usually end with a line break like a clear but usually clear it too)
+
+
+padding is space between content and border inside a div(container in gen), margin is space outside
+width: 980px; vs width:100%;  i prefer fixed width like first usually when i can
+
+*/
